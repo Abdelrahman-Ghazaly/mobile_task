@@ -29,5 +29,8 @@ Develop a responsive product listing app that displays a grid of products on the
 - A walkthrough video or presentation showcasing the app's functionality and highlighting the technical implementation
 - Unit test and Ui test
 - Push the task on Github
-### Fake Products API for Testing
+### Fake Products API for Testing:
 curl --location 'https://api.escuelajs.co/api/v1/products?limit=20&offset=0'
+### Design:
+![image (1)](https://github.com/user-attachments/assets/c60a37e0-6712-4a82-9589-8cedf19f7a95)
+
