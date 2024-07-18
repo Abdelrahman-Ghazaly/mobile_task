@@ -32,5 +32,6 @@ Develop a responsive product listing app that displays a grid of products on the
 ### Fake Products API for Testing:
 curl --location 'https://api.escuelajs.co/api/v1/products?limit=20&offset=0'
 ### Design:
-![image (1)](https://github.com/user-attachments/assets/c60a37e0-6712-4a82-9589-8cedf19f7a95)
+![image (2)](https://github.com/user-attachments/assets/3f0acf87-0e1a-4249-88a3-d2227ceb698a)
+
 
