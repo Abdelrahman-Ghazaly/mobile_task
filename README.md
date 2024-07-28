@@ -31,7 +31,8 @@ Develop a responsive product listing app that displays a grid of products on the
 - Push the task on Github
 ### Fake Products API for Testing:
 curl --location 'https://api.escuelajs.co/api/v1/products?limit=20&offset=0'
-Backup: curl --location 'https://storage.googleapis.com/catalog-cdn/products.json'
+Backup:
+curl --location 'https://storage.googleapis.com/catalog-cdn/products.json'
 ### Design:
 ![image (2)](https://github.com/user-attachments/assets/3f0acf87-0e1a-4249-88a3-d2227ceb698a)
 
