@@ -4,7 +4,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../constants/enum/enum.dart';
 
-part 'exceptions.freezed.dart';
+part 'server_exceptions.freezed.dart';
 
 @freezed
 class ServerException with _$ServerException implements Exception {
