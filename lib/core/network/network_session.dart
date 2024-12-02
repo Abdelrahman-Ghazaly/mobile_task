@@ -10,7 +10,7 @@ import 'network.dart';
 
 @singleton
 class NetworkSession {
-  Future<T> request<T extends MappableBase>({
+  Future<Response> request({
     required NetworkRequest request,
   }) async {
     try {
@@ -66,12 +66,12 @@ class NetworkSession {
       if (json == null) {
         throw const ServerException.fetchDataException();
       } else {
-        return MappableBase.fromJson(json) as T;
+        return response;
       }
     } on DioException catch (e, s) {
       log('A DioException has been caught', name: 'NetworkSession.request', error: e, stackTrace: s);
       throw ServerException.fromDioException(e);
-    } on Exception catch (e, s) {
+    } catch (e, s) {
       log('An Exception has been caught', name: 'NetworkSession.request', error: e, stackTrace: s);
       throw ServerException(e.toString());
     }

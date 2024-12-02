@@ -16,7 +16,7 @@ class Product {
   final String title;
   final int price;
   final String description;
-  final List<String> images;
+  final List images;
   final String creationAt;
   final String updatedAt;
   final ProductCategory category;

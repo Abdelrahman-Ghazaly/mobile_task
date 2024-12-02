@@ -13,7 +13,7 @@ class Failure with _$Failure {
   const factory Failure.validation([String? message]) = ValidationFailure;
 
   factory Failure.fromException(dynamic exception) {
-    switch (exception.runtimeType) {
+    switch (exception) {
       case ServerException _:
         return switch (exception) {
           FetchDataException() => const Failure.network('Failed to fetch data.'),

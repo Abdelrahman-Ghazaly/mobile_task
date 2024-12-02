@@ -22,10 +22,12 @@ class ProductListingRemoteDataSourceImp extends ProductListingRemoteDataSource {
     required int offset,
   }) async {
     try {
-      final response = await _session.request<MostUseProductsResponse>(
+      final response = await _session.request(
         request: MostUseProductsNetworkRequest(limit: limit, offset: offset),
       );
-      return Right(response);
+
+      final data = MostUseProductsResponse.fromJson(response.data);
+      return Right(data);
     } catch (e) {
       return Left(Failure.fromException(e));
     }
@@ -34,10 +36,12 @@ class ProductListingRemoteDataSourceImp extends ProductListingRemoteDataSource {
   @override
   Future<Either<Failure, RecommendedProductResponse>> fetchRecommendedProducts() async {
     try {
-      final response = await _session.request<RecommendedProductResponse>(
+      final response = await _session.request(
         request: RecommendedProductsNetworkRequest(),
       );
-      return Right(response);
+
+      final data = RecommendedProductResponse.fromJson(response.data);
+      return Right(data);
     } catch (e) {
       return Left(Failure.fromException(e));
     }
@@ -46,10 +50,12 @@ class ProductListingRemoteDataSourceImp extends ProductListingRemoteDataSource {
   @override
   Future<Either<Failure, SnackProductsResponse>> fetchSnackProducts() async {
     try {
-      final response = await _session.request<SnackProductsResponse>(
+      final response = await _session.request(
         request: SnackProductsNetworkRequest(),
       );
-      return Right(response);
+
+      final data = SnackProductsResponse.fromJson(response.data);
+      return Right(data);
     } catch (e) {
       return Left(Failure.fromException(e));
     }

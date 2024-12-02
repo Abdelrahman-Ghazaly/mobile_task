@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - lcov.info - Users/aghazaly/Developer/side_quests/nana/lib/core/utils/errors/server_exceptions.dart</title>
+  <link rel="stylesheet" type="text/css" href="../../../../../../../../../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">LCOV - code coverage report</td></tr>
+            <tr><td class="ruler"><img src="../../../../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../../../../../../../../../index.html" title="Click to go to top-level">top level</a> - <a href="index.html" title="Click to go to directory /Users/aghazaly/Developer/side_quests/nana/lib/core/utils/errors">/Users/aghazaly/Developer/side_quests/nana/lib/core/utils/errors</a> - server_exceptions.dart<span style="font-size: 80%;"> (source / <a href="server_exceptions.dart.func-c.html" title="Click to go to function table">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only">Hit</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">lcov.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
+            <td class="headerCovTableEntry">19</td>
+            <td class="headerCovTableEntry">19</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test Date:</td>
+            <td class="headerValue">2024-12-02 23:47:55</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryHi">-</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">0</td>
+          </tr>
+                  <tr><td><img src="../../../../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../../../../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">            Line data    Source code</pre>
+<pre class="source">
+<span id="L1"><span class="lineNum">       1</span>              : import 'package:dio/dio.dart';</span>
+<span id="L2"><span class="lineNum">       2</span>              : import 'package:flutter/foundation.dart';</span>
+<span id="L3"><span class="lineNum">       3</span>              : import 'package:freezed_annotation/freezed_annotation.dart';</span>
+<span id="L4"><span class="lineNum">       4</span>              : </span>
+<span id="L5"><span class="lineNum">       5</span>              : import '../../constants/enum/enum.dart';</span>
+<span id="L6"><span class="lineNum">       6</span>              : </span>
+<span id="L7"><span class="lineNum">       7</span>              : part 'server_exceptions.freezed.dart';</span>
+<span id="L8"><span class="lineNum">       8</span>              : </span>
+<span id="L9"><span class="lineNum">       9</span>              : @freezed</span>
+<span id="L10"><span class="lineNum">      10</span>              : class ServerException with _$ServerException implements Exception {</span>
+<span id="L11"><span class="lineNum">      11</span>              :   const factory ServerException([String? message]) = _ServerException;</span>
+<span id="L12"><span class="lineNum">      12</span>              : </span>
+<span id="L13"><span class="lineNum">      13</span>              :   const factory ServerException.fetchDataException([</span>
+<span id="L14"><span class="lineNum">      14</span>              :     @Default('Failed to fetch data from the server.') String? message,</span>
+<span id="L15"><span class="lineNum">      15</span>              :   ]) = FetchDataException;</span>
+<span id="L16"><span class="lineNum">      16</span>              : </span>
+<span id="L17"><span class="lineNum">      17</span>              :   const factory ServerException.badCertificateException([</span>
+<span id="L18"><span class="lineNum">      18</span>              :     @Default('Bad certificate detected. Unable to establish a secure connection.') String? message,</span>
+<span id="L19"><span class="lineNum">      19</span>              :   ]) = BadCertificateException;</span>
+<span id="L20"><span class="lineNum">      20</span>              : </span>
+<span id="L21"><span class="lineNum">      21</span>              :   const factory ServerException.badRequestException([</span>
+<span id="L22"><span class="lineNum">      22</span>              :     @Default('Bad request. Please check your input and try again.') String? message,</span>
+<span id="L23"><span class="lineNum">      23</span>              :   ]) = BadRequestException;</span>
+<span id="L24"><span class="lineNum">      24</span>              : </span>
+<span id="L25"><span class="lineNum">      25</span>              :   const factory ServerException.unauthorizedException([</span>
+<span id="L26"><span class="lineNum">      26</span>              :     @Default('Unauthorized access. Please check your credentials.') String? message,</span>
+<span id="L27"><span class="lineNum">      27</span>              :   ]) = UnauthorizedException;</span>
+<span id="L28"><span class="lineNum">      28</span>              : </span>
+<span id="L29"><span class="lineNum">      29</span>              :   const factory ServerException.notFoundException([</span>
+<span id="L30"><span class="lineNum">      30</span>              :     @Default('Requested resource not found.') String? message,</span>
+<span id="L31"><span class="lineNum">      31</span>              :   ]) = NotFoundException;</span>
+<span id="L32"><span class="lineNum">      32</span>              : </span>
+<span id="L33"><span class="lineNum">      33</span>              :   const factory ServerException.conflictException([</span>
+<span id="L34"><span class="lineNum">      34</span>              :     @Default('A conflict occurred. Please try again later.') String? message,</span>
+<span id="L35"><span class="lineNum">      35</span>              :   ]) = ConflictException;</span>
+<span id="L36"><span class="lineNum">      36</span>              : </span>
+<span id="L37"><span class="lineNum">      37</span>              :   const factory ServerException.noInternetConnectionException([</span>
+<span id="L38"><span class="lineNum">      38</span>              :     @Default('No internet connection. Please check your network settings.') String? message,</span>
+<span id="L39"><span class="lineNum">      39</span>              :   ]) = NoInternetConnectionException;</span>
+<span id="L40"><span class="lineNum">      40</span>              : </span>
+<span id="L41"><span class="lineNum">      41</span>              :   const factory ServerException.unprocessableEntityException([</span>
+<span id="L42"><span class="lineNum">      42</span>              :     @Default('Unprocessable entity. The request could not be processed.') String? message,</span>
+<span id="L43"><span class="lineNum">      43</span>              :   ]) = UnprocessableEntityException;</span>
+<span id="L44"><span class="lineNum">      44</span>              : </span>
+<span id="L45"><span class="lineNum">      45</span>              :   const factory ServerException.cacheException([</span>
+<span id="L46"><span class="lineNum">      46</span>              :     @Default('Cache error occurred. Failed to retrieve data from cache.') String? message,</span>
+<span id="L47"><span class="lineNum">      47</span>              :   ]) = CacheException;</span>
+<span id="L48"><span class="lineNum">      48</span>              : </span>
+<span id="L49"><span class="lineNum">      49</span>              :   const factory ServerException.internalServerErrorException([</span>
+<span id="L50"><span class="lineNum">      50</span>              :     @Default('An internal server error occurred. Please try again later.') String? message,</span>
+<span id="L51"><span class="lineNum">      51</span>              :   ]) = InternalServerErrorException;</span>
+<span id="L52"><span class="lineNum">      52</span>              : </span>
+<span id="L53"><span class="lineNum">      53</span> <span class="tlaGNC tlaBgGNC">           3 :   factory ServerException.fromDioException(DioException exception) {</span></span>
+<span id="L54"><span class="lineNum">      54</span> <span class="tlaGNC">           9 :     final apiMessage = exception.response?.data?['message'] as String?;</span></span>
+<span id="L55"><span class="lineNum">      55</span> <span class="tlaGNC">           2 :     return switch (exception.type) {</span></span>
+<span id="L56"><span class="lineNum">      56</span> <span class="tlaGNC">           2 :       DioExceptionType.connectionTimeout =&gt; const ServerException.fetchDataException(),</span></span>
+<span id="L57"><span class="lineNum">      57</span> <span class="tlaGNC">           2 :       DioExceptionType.sendTimeout =&gt; const ServerException.fetchDataException(),</span></span>
+<span id="L58"><span class="lineNum">      58</span> <span class="tlaGNC">           2 :       DioExceptionType.receiveTimeout =&gt; const ServerException.fetchDataException(),</span></span>
+<span id="L59"><span class="lineNum">      59</span> <span class="tlaGNC">           2 :       DioExceptionType.badCertificate =&gt; const ServerException.badRequestException(),</span></span>
+<span id="L60"><span class="lineNum">      60</span> <span class="tlaGNC">           6 :       DioExceptionType.badResponse =&gt; switch (exception.response?.statusCode) {</span></span>
+<span id="L61"><span class="lineNum">      61</span> <span class="tlaGNC">           2 :           StatusCode.badRequest =&gt; const ServerException.badRequestException(),</span></span>
+<span id="L62"><span class="lineNum">      62</span> <span class="tlaGNC">           1 :           StatusCode.notFound =&gt; const ServerException.notFoundException(),</span></span>
+<span id="L63"><span class="lineNum">      63</span> <span class="tlaGNC">           1 :           StatusCode.conflict =&gt; const ServerException.conflictException(),</span></span>
+<span id="L64"><span class="lineNum">      64</span> <span class="tlaGNC">           2 :           StatusCode.unauthorized =&gt; ServerException.unauthorizedException(apiMessage ?? 'Unauthorized'),</span></span>
+<span id="L65"><span class="lineNum">      65</span> <span class="tlaGNC">           2 :           StatusCode.forbidden =&gt; ServerException.unauthorizedException(apiMessage ?? 'Unauthorized'),</span></span>
+<span id="L66"><span class="lineNum">      66</span> <span class="tlaGNC">           1 :           StatusCode.internalServer =&gt; const ServerException.internalServerErrorException(),</span></span>
+<span id="L67"><span class="lineNum">      67</span> <span class="tlaGNC">           2 :           StatusCode.unprocessableEntity =&gt; ServerException.unprocessableEntityException(apiMessage ?? 'Server Error'),</span></span>
+<span id="L68"><span class="lineNum">      68</span> <span class="tlaGNC">           1 :           _ =&gt; ServerException(apiMessage ?? 'Server Error')</span></span>
+<span id="L69"><span class="lineNum">      69</span>              :         },</span>
+<span id="L70"><span class="lineNum">      70</span> <span class="tlaGNC">           2 :       DioExceptionType.cancel =&gt; const ServerException('Canceled'),</span></span>
+<span id="L71"><span class="lineNum">      71</span> <span class="tlaGNC">           2 :       DioExceptionType.connectionError =&gt; const ServerException.noInternetConnectionException(),</span></span>
+<span id="L72"><span class="lineNum">      72</span> <span class="tlaGNC">           2 :       DioExceptionType.unknown =&gt; const ServerException('An unknown error occurred.'),</span></span>
+<span id="L73"><span class="lineNum">      73</span>              :     };</span>
+<span id="L74"><span class="lineNum">      74</span>              :   }</span>
+<span id="L75"><span class="lineNum">      75</span>              : }</span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../../../../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov" target="_parent">LCOV version 2.1-1</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>
