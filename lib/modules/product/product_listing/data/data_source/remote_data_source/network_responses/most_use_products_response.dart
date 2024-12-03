@@ -1,16 +1,19 @@
-import '../../../../../../../core/network/network.dart';
 import '../../../../domain/entities/product.dart';
 import '../../../models/product_model.dart';
 
-class MostUseProductsResponse extends ListMappable {
+class MostUseProductsResponse {
   MostUseProductsResponse({required this.data});
   final List<Product> data;
 
-  factory MostUseProductsResponse.fromJson(List<Map<String, dynamic>>? json) {
-    late final List<Product>? data;
+  factory MostUseProductsResponse.fromJson(List<dynamic>? json) {
+    List<Product?> data = [];
     if (json != null && json.isNotEmpty) {
-      data = json.map((e) => ProductModel.fromJson(e)).toList();
+      data = json.map((e) {
+        if (e is Map<String, dynamic>) {
+          return ProductModel.fromJson(e);
+        }
+      }).toList();
     }
-    return MostUseProductsResponse(data: data ?? []);
+    return MostUseProductsResponse(data: data.nonNulls.toList());
   }
 }

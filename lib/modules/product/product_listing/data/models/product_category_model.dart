@@ -9,14 +9,17 @@ class ProductCategoryModel extends ProductCategory {
     required super.updatedAt,
   });
 
-  @override
   factory ProductCategoryModel.fromJson(Map<String, dynamic> json) {
-    return ProductCategoryModel(
-      id: json['id'],
-      name: json['name'],
-      image: json['image'],
-      creationAt: json['creationAt'],
-      updatedAt: json['updatedAt'],
-    );
+    try {
+      return ProductCategoryModel(
+        id: json['id'] as int,
+        name: json['name'] as String,
+        image: json['image'] as String,
+        creationAt: json['creationAt'],
+        updatedAt: json['updatedAt'],
+      );
+    } catch (e) {
+      throw FormatException("Failed to parse ProductCategoryModel: $e");
+    }
   }
 }

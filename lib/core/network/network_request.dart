@@ -3,9 +3,11 @@ import '../constants/constants.dart';
 abstract class NetworkRequest {
   String get endpoint;
 
-  String get baseUrl => 'https://api.escuelajs.co/api';
+  final String _baseUrl = 'https://api.escuelajs.co/api';
 
-  String get apiVersion => '/v1';
+  final String _apiVersion = '/v1';
+
+  String get baseUrl => '$_baseUrl$_apiVersion';
 
   HttpMethod get method;
 

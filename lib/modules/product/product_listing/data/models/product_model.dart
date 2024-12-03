@@ -15,7 +15,8 @@ class ProductModel extends Product {
 
   @override
   factory ProductModel.fromJson(Map<String, dynamic> json) {
-    return ProductModel(
+    try {
+      return ProductModel(
         id: json['id'],
         title: json['title'],
         price: json['price'],
@@ -23,6 +24,10 @@ class ProductModel extends Product {
         images: json['images'],
         creationAt: json['creationAt'],
         updatedAt: json['updatedAt'],
-        category: ProductCategoryModel.fromJson(json['category']));
+        category: ProductCategoryModel.fromJson(json['category']),
+      );
+    } catch (e) {
+      throw FormatException("Failed to parse ProductCategoryModel: $e");
+    }
   }
 }
